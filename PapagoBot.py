@@ -21,7 +21,7 @@ import unicodedata
 import json
 
 #discord bot tokken
-token = 'NzQ4MzYwOTQ2NDk3NDg2OTQy.X0cTcQ.uJmCtOxHCV3CRUAuhNm_pedoy0o'
+token = ''
 #Naver Open API application ID
 client_id = "Rj2TZHYsoVvt0s6MLqWW"
 #Naver Open API application token
@@ -355,6 +355,7 @@ async def on_message(message): # on_message() event : when the bot has recieved 
                     await message.channel.send("Error Code : " + responsedCode)
         except HTTPError as e:
             await message.channel.send("Translate Failed. HTTPError Occured.")
-client.run(token)
+access_token = os.environ["BOT_TOKEN"]
+client.run(access_token)
 
 
