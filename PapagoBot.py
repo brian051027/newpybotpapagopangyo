@@ -30,7 +30,7 @@ client_secret = "MJkS7xnRud"
 client = discord.Client()
 @client.event # Use these decorator to register an event.
 async def on_ready(): # on_ready() event : when the bot has finised logging in and setting things up
-    await client.change_presence(status=discord.Status.online, activity=discord.Game("!롤전적 (닉)or !롤체전적 (닉)을 처보세요."))
+    await client.change_presence(status=discord.Status.online, activity=discord.Game("!도움말을 ."))
     print("New log in as {0.user}".format(client))
 
 @client.event
