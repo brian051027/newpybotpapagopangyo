@@ -327,7 +327,18 @@ async def on_message(message): # on_message() event : when the bot has recieved 
                 # Simplified Chinese
                 dataParmas = "source=zh-CN&target=ko&text=" + combineword
 
-
+    if message.content == "!도움말":
+        embed = discord.Embed(title="도움말", description="번역 안내", color=0x62c1cc)
+        embed.add_field(name="한영번역", value="!한영번역 (내용)", inline=False)
+        embed.add_field(name="영한번역", value="!영한번역 (내용)", inline=False)
+        embed.add_field(name="한일번역", value="!한일번역 (내용)", inline=False)
+        embed.add_field(name="일한번역", value="!일한번역 (내용)", inline=False)
+        embed.add_field(name="한중번역", value="!한중번역 (내용)", inline=False)
+        embed.add_field(name="중한번역", value="!중한번역 (내용)", inline=False)
+        embed.set_footer(text="by 설준서")
+        await message.channel.send("도움말 입니다.", embed=embed)
+        
+                
                 # Make a Request Instance
                 request = Request(baseurl)
                 # add header to packet
